@@ -22,11 +22,11 @@ const GeneralStudInfo = () => {
           </div>
           <div>
             <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900   ">Surname</label>
-            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Doe" required />
+            <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="MENOU" required />
           </div>
           <div>
             <label for="company" class="block mb-2 text-sm font-medium text-gray-900   ">Forenames</label>
-            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="Modupke" required />
+            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="Gqel" required />
           </div>
           <div>
             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900   ">Gender</label>

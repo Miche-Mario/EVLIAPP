@@ -55,7 +55,7 @@ const StudCourses = () => {
         selected === "group"
             && (result = "Group Course")
         selected === "oneandone"
-            && (result = "One and One Course")
+            && (result = "One on One Course")
 
         return result
     }
@@ -103,7 +103,7 @@ const StudCourses = () => {
                                     <select onChange={handleOnChange} value={selected} id="countries" class="mt-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5">
                                         <option></option>
                                         <option value="group">Group</option>
-                                        <option value="oneandone">One and One</option>
+                                        <option value="oneandone">One on One</option>
                                     </select>
                                 </div>
                                 <div className=' mt-4'>

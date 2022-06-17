@@ -73,13 +73,17 @@ const ProgramButton = () => {
             </Link>
           </ul>
         </li>
+        
         <Link href="/itemssale">
             <a>
               <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Items for sale</li>
             </a>        
-            </Link>        <hr className='ml-2 mr-2 mb-2 mt-2'/>
+            </Link>   
+                 <hr className='ml-2 mr-2 mb-2 mt-2'/>
         <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer ">Exit</li>
       </ul>
+
+      
     </div>
   )
 }

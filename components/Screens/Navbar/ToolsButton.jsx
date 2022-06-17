@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const ToolsButton = () => {
   return (
     <div className="group inline-block text-light-dark ml-2 text-10">
@@ -43,14 +43,39 @@ const ToolsButton = () => {
           <ul
             className="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
           >
-            <li className="px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Users</li>
-            <li className="px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Users group</li>
+            <Link href="/users">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Users</li>
+            </a>        
+            </Link>
+            <Link href="/usergroup">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">User group</li>
+            </a>        
+            </Link>   
           </ul>
         </li>
         <hr className='ml-2 mr-2 mb-2 mt-2'/>
-        <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Levels</li>
-        <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Students discounts</li>
-        <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Payment Methods</li>
+        <Link href="/language">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Languages</li>
+            </a>        
+        </Link> 
+        <Link href="/levels">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Levels</li>
+            </a>        
+        </Link> 
+        <Link href="/studentsDiscounts">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Students discounts</li>
+            </a>        
+        </Link> 
+        <Link href="/paymentMethods">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Payment Methods</li>
+            </a>        
+        </Link> 
         <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer ">Grades</li>
         <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer ">Expenses categories</li>
         <hr className='ml-2 mr-2 mb-2 mt-2'/>
