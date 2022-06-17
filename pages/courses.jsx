@@ -62,7 +62,7 @@ const Courses = () => {
         aria-describedby="modal-modal-description"
       >
         
-          <GroupStud handleClose={handleClose1}/>
+          <GroupStud handleClose1={handleClose1}/>
      
       </Modal>
       <div>
