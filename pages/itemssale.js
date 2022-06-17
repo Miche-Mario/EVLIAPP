@@ -18,7 +18,7 @@ const style = {
   m: 0,
   height: 'auto'
 };
-const Expenses = () => {
+const itemssale = () => {
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
@@ -40,22 +40,15 @@ const Expenses = () => {
           <form>
             <div className='flex flex-row m-3 justify-around items-center'>
               <div className=''>
-                <label for="first_name" class="block mb-6 text-base font-medium text-gray-900 p-1">Expense Type</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Amount</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Date</label>
-               
+                <label for="first_name" class="block mb-6 text-base font-medium text-gray-900 p-1">Item name</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Price</label>               
               
               </div>
               <div >
-               
-                <select id="countries" class="bg-gray-50 mb-4  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
-                  <option></option>
-                  <option value="US">Bills</option>
-                  <option value="CA">Salaries</option>
-                </select> 
-                <input type="number" id="first_name" class="bg-gray-50 border mb-4  text-right border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="name" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="name" />
 
-                <input type="date" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="00" />
+                <input type="number" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="00" />
+
 
               </div>
             </div>
@@ -78,29 +71,12 @@ const Expenses = () => {
 
       <div className='m-3'>
         <fieldset className='border  rounded border-dark-purple'>
-          <legend className='p-1 ml-3 text-xl text-blue-700'>EXPENSES</legend>
-          <div className='flex ml-3 items-start'>
-            <div className=' flex'>
-              <p className='text-xl ml-8 mt-1 text-gray-900'>From date</p>
-              <input type="date" id="first_name" class=" ml-3 bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-50 p-1.5 " placeholder="name" />
-            </div>
-            
-
-            <div className=' flex '>
-              <p className='text-xl mt-1 ml-8 text-gray-900'>To date</p>
-              <input type="date" id="first_name" class=" ml-3 bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-50 p-1.5 " placeholder="name" />
-            </div>
-
+          <legend className='p-1 ml-3 text-xl text-blue-700'>ITEMS FOR SALE</legend>
+        
+        
             <div className='flex'>
-            <p className='text-xl mt-1 ml-8 text-gray-900'>Expense type</p>
-            <select id="countries" class="ml-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-50 p-1.5">
-              <option value="US">All</option>
-              <option value="CA">Accessoires</option>
-              <option value="CA">Bills</option>
-              <option value="CA">Cleaning</option>
-              <option value="CA">Salaries</option>
-            </select>
-            </div>
+          
+       
 
            
             <button onClick={handleOpen} className='bg-blue-600 rounded ml-3 text-gray-100 font-medium w-48 h-10 p-3 flex items-center justify-center' type="submit" name='Add'>
@@ -113,35 +89,21 @@ const Expenses = () => {
             <table className="w-full   ">
               <thead>
                 <tr className="bg-gray-200  text-gray-600 uppercase text-sm leading-normal">
-                  <th className=" py-3 px-3 text-center">Date of expense</th>
-                  <th className=" py-3 px-3 text-center">Expense type</th>
-                  <th className=" py-3 px-3 text-center">Category</th>
-                  <th className=" py-3 px-3 text-center">Amount</th>
+                  <th className=" py-3 px-3 text-center">Item name</th>
+                  <th className=" py-3 px-3 text-center">Price</th>
                   <th className=" py-3 px-3 text-center">Action</th>
                 </tr>
               </thead>
               <tbody className="text-gray-600  text-sm font-light">
-                <tr className="border-b border-gray-200  hover:bg-gray-100">
-              
-
+                <tr className=" border-gray-400  hover:bg-gray-100 border-b-2">
                   <td className="p-0">
                     <div className="flex items-center justify-center">
-                      <span className="font-medium uppercase">03 Jun 1997</span>
+                      <span className="font-medium uppercase">Tee-shirt</span>
                     </div>
                   </td>
                   <td className=" py-3 px-3 text-center">
                     <div className="flex items-center justify-center">
-                      <span className="font-medium">Salaries</span>
-                    </div>
-                  </td>
-                  <td className=" py-3 px-3 text-center">
-                    <div className="flex items-center justify-center">
-                      <span className="font-medium">Accounting</span>
-                    </div>
-                  </td>
-                  <td className=" py-3 px-3 text-center">
-                    <div className="flex items-center justify-center">
-                      <span className="font-medium">1 200</span>
+                      <span className="font-medium">23.00</span>
                     </div>
                   </td>
                  
@@ -163,7 +125,7 @@ const Expenses = () => {
 
 
                 </tr>
-
+                
 
 
 
@@ -173,9 +135,7 @@ const Expenses = () => {
           <div className='m-6 flex justify-end'>
 
   
-          <span className='text-sm ml-3 p-2 '>Total for selected period</span> 
-          <span className='text-right border-2  border-b-slate-900 p-1 w-32 font-medium'>11 200</span>
-
+         
           </div>
         </fieldset>
       </div>
@@ -206,4 +166,4 @@ const Expenses = () => {
   )
 }
 
-export default Expenses
+export default itemssale

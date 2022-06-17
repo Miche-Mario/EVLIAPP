@@ -9,7 +9,7 @@ const style = {
   position: 'absolute',
   top: '50%',
   left: '50%',
-  width: 400,
+  width: 500,
   transform: 'translate(-50%, -50%)',
   bgcolor: 'background.paper',
   border: '2px solid darkblue',
@@ -40,33 +40,45 @@ const Prospects = () => {
           <form>
             <div className='flex flex-row m-3 justify-around items-center'>
               <div className=''>
-                <label for="first_name" class="block mb-6 text-base font-medium text-gray-900 p-1 ">Surname</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Forenames</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Gender</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">CoCiti</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Enquery date</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Email</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Phone</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Course</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Language</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Level</label>
-                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">How did you hear about us ?</label>
+                <label for="first_name" class="block mb-6 text-base font-medium text-gray-900 p-1">Surname</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Forenames</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Gender</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">CoCiti</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Enquery date</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Email</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Phone</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Course</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Language</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Level</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">How did you hear about us ?</label>
 
               
               
               </div>
               <div >
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
-              <input type="date" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
-              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
-
-              <select id="countries" class="bg-gray-50 mb-4  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="surname" />
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="forenames" />
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="gender" />
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="cociti" />
+                <input type="date" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="name" />
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="email" />
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="phone" />
+                <select id="countries" class="bg-gray-50 mb-4  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                  <option></option>
+                  <option value="US">general english</option>
+                  <option value="CA">TOEFL</option>
+                </select> 
+                <select id="countries" class="bg-gray-50 mb-4  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                  <option></option>
+                  <option value="US">French</option>
+                  <option value="CA">English</option>
+                </select>              
+                <select id="countries" class="bg-gray-50 mb-4  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
+                  <option></option>
+                  <option value="US">A1</option>
+                  <option value="CA">A2</option>
+                </select>
+                <select id="countries" class="bg-gray-50 mb-4  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2">
                   <option></option>
                   <option value="US">myclassgroup</option>
                   <option value="CA">secondgroup</option>

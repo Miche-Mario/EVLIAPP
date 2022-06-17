@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const ProgramButton = () => {
@@ -9,7 +10,7 @@ const ProgramButton = () => {
         <span className="pr-1 font-semibold flex-1 text-white">Program</span>
         <span>
           <svg
-            className="fill-current h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
+            className="fill-current text-white h-4 w-4 transform group-hover:-rotate-180 transition duration-150 ease-in-out"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill='#fff'
@@ -23,9 +24,23 @@ const ProgramButton = () => {
       <ul
         className="bg-white border rounded-sm transform scale-0 group-hover:scale-100 absolute transition duration-150 ease-in-out origin-top min-w-32"
       >
-        <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Students</li>
-        <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Courses</li>
-        <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Propects</li>
+        <Link href="/students">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Students</li>
+            </a>        
+        </Link>
+        <Link href="/courses">
+            <a>
+              <li className="rounded-sm px-3 py-1  pl-6 cursor-pointer">Courses</li>
+            </a>        
+        </Link>
+        <Link href="/prospects">
+            <a>
+              <li className="rounded-sm px-3 py-1  pl-6 cursor-pointer">Prospects</li>
+            </a>        
+        </Link>
+        
+       
         <li className="rounded-sm relative px-3 py-1 hover:bg-gray pl-6 cursor-pointer">
           <button
             className="w-full text-left flex items-center outline-none focus:outline-none"
@@ -46,12 +61,23 @@ const ProgramButton = () => {
           <ul
             className="bg-white border rounded-sm absolute top-0 right-0 transition duration-150 ease-in-out origin-top-left min-w-32"
           >
-            <li className="px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Expenses</li>
-            <li className="px-3 py-1 hover:bg-gray pl-6 cursor-pointer">Expenses Type</li>
+            <Link href="/expenses">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Expenses</li>
+            </a>        
+            </Link>
+            <Link href="/expensestype">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Expenses Type</li>
+            </a>        
+            </Link>
           </ul>
         </li>
-        <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer ">Items for Sale</li>
-        <hr className='ml-2 mr-2 mb-2 mt-2'/>
+        <Link href="/itemssale">
+            <a>
+              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Items for sale</li>
+            </a>        
+            </Link>        <hr className='ml-2 mr-2 mb-2 mt-2'/>
         <li className="rounded-sm px-3 py-1 hover:bg-gray pl-6 cursor-pointer ">Exit</li>
       </ul>
     </div>
