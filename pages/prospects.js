@@ -1,10 +1,95 @@
 import { Checkbox } from '@mui/material'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../components/Screens/Layout'
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
 
+
+const style = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  width: 400,
+  transform: 'translate(-50%, -50%)',
+  bgcolor: 'background.paper',
+  border: '2px solid darkblue',
+  boxShadow: 24,
+  p: 0,
+  m: 0,
+  height: 'auto'
+};
 const Prospects = () => {
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <Layout >
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style} >
+          <p class="text-white text-xl p-3  bg-dark-purple w-full">WAITING LIST EDIT</p>
+          <form>
+            <div className='flex flex-row m-3 justify-around items-center'>
+              <div className=''>
+                <label for="first_name" class="block mb-6 text-base font-medium text-gray-900 p-1 ">Surname</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Forenames</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Gender</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">CoCiti</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Enquery date</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Email</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Phone</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Course</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Language</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">Level</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1 ">How did you hear about us ?</label>
+
+              
+              
+              </div>
+              <div >
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
+              <input type="date" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="name" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
+              <input type="text" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2 " placeholder="enrollement date" />
+
+              <select id="countries" class="bg-gray-50 mb-4  border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                  <option></option>
+                  <option value="US">myclassgroup</option>
+                  <option value="CA">secondgroup</option>
+                </select>
+              </div>
+            </div>
+            <div className='flex flex-row justify-around  mt-3 mb-3'>
+              <button className='bg-blue-600 rounded text-gray-100 font-medium w-20 h-10 flex items-center justify-center' type="submit" name='Add'>
+                Ok
+              </button>
+              <button onClick={handleClose} className='bg-blue-600 rounded text-gray-100 font-medium w-20 h-10 flex items-center justify-center' type="submit" name='Add'>
+                Cancel
+              </button>
+            </div>
+          </form>
+        </Box>
+
+
+      </Modal>
+
+
+
+
       <div className='m-3'>
         <fieldset className='border  rounded border-dark-purple'>
           <legend className='p-1 ml-3 text-xl text-blue-700'>PROSPECTS</legend>
@@ -26,12 +111,12 @@ const Prospects = () => {
 
             <p className=' ml-6 ext-xl text-gray-900'>Archived</p>
             <Checkbox />
-            <button /* onClick={handleOpen} */ className='bg-blue-600 rounded ml-3 text-gray-100 font-medium w-48 h-10 p-3 flex items-center justify-center' type="submit" name='Add'>
-                    Add
-                </button>
-                <button className='bg-blue-600 rounded ml-3 text-gray-100 font-medium w-48 h-10 p-3 flex items-center justify-center' type="submit" name='Add'>
-                    Assigned to course
-                </button>
+            <button onClick={handleOpen} className='bg-blue-600 rounded ml-3 text-gray-100 font-medium w-48 h-10 p-3 flex items-center justify-center' type="submit" name='Add'>
+              Add
+            </button>
+            <button className='bg-blue-600 rounded ml-3 text-gray-100 font-medium w-48 h-10 p-3 flex items-center justify-center' type="submit" name='Add'>
+              Assigned to course
+            </button>
 
           </div>
 
@@ -90,7 +175,7 @@ const Prospects = () => {
                       <span className="font-medium">+229 96421088</span>
                     </div>
                   </td>
-                 
+
                   <td className=" py-3 px-3 text-center">
                     <div className="flex items-center justify-center">
                       <span className="font-medium">General English</span>
@@ -106,7 +191,7 @@ const Prospects = () => {
                       <span className="font-medium">03 Jun 2022</span>
                     </div>
                   </td>
-         
+
                   <td className=" py-3 px-3 text-center">
                     <div className="flex item-center justify-center">
                       <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -181,7 +266,7 @@ const Prospects = () => {
               <option value="CA">second group</option>
             </select>
 
-           
+
 
           </div>
 
@@ -223,7 +308,7 @@ const Prospects = () => {
                     </div>
                   </td>
 
-                 
+
                   <td className=" py-3 px-3 text-center">
                     <div className="flex items-center justify-center">
                       <span className="font-medium">General English</span>
@@ -239,16 +324,16 @@ const Prospects = () => {
                       <span className="font-medium">03 Jun 2022</span>
                     </div>
                   </td>
-         
+
                   <td className=" py-3 px-3 text-center">
                     <div className="flex item-center justify-center">
-                      
+
                       <div className="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                         </svg>
                       </div>
-                     
+
                     </div>
                   </td>
 
@@ -261,9 +346,9 @@ const Prospects = () => {
               </tbody>
             </table>
           </fieldset>
-          <span className='text-sm ml-3 '>0 student in selected group</span>
+          <span className='text-sm ml-3 '>0 prospect in selected group</span>
         </fieldset>
-       
+
       </div>
     </Layout>
   )
