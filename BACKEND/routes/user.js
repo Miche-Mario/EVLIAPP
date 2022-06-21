@@ -113,7 +113,7 @@ router.patch('/update',authentificateToken,checkRole.checkRole, (req,res) => {
     connection.query(query,[user.status, user.id], (err, results) => {
         if(!err) {
             if(results.affectedRows == 0) {
-                return res.status(404).json({ùessage: "User id doesn't exist"});
+                return res.status(404).json({message: "User id doesn't exist"});
             }
             return res.status(200).json({message: "User updated successfully"});
         } else {
@@ -122,11 +122,11 @@ router.patch('/update',authentificateToken,checkRole.checkRole, (req,res) => {
     })
 })
 
-router.get('checkToken',authentificateToken, (req, res) => {
+router.get('checkToken',auth.authentificateToken, (req, res) => {
     return res.status(200).json({message: "true"});
 })
 
-router.post('/changePassword', (req, res) => {
+router.post('/changePassword',auth.authentificateToken, (req, res) => {
     const user =req.body;
     const email = res.locals.email;
     var query = "select * from user where email=? and password=?";
