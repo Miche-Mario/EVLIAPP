@@ -2,10 +2,10 @@
   "name": "evli_backend",
   "version": "1.0",
   "main": "index.js",
+  "license": "MIT",
   "scripts": {
     "start": "nodemon server.js"
   },
-  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
