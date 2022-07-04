@@ -1,71 +1,117 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import StudCourses from '../Tab/StudCourses/AddStudCourses';
-import AddStudPur from '../Tab/StudPurchases/AddStudPurc';
-import AddStudExam from '../Tab/Exam/AddStudExam'
+import React, {useState, useEffect} from 'react'
 
-function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+const CoursesPurchasesExam = () => {
+  const [options, setOptions] = useState()
+  const [programId, setProgramId] = useState('')
+
+  const duration = []
+
+
+for (let i = 0; i<49; i++){
+  duration[i] = i +1
+}
+
+  const changeOption = (e) => {
+    setProgramId(e.target.value)
+  }
+
+  const click = () => {
+    if(programId == 1) {
+      setOptions(general)
+    } else if(programId == 3){
+      setOptions(tests)
+    }else
+    {
+      setOptions('')
+    }
+  }
+
+
+const programs = [
+    {
+      id: 1,
+      label: "General English",
+    },
+    {
+      id: 2,
+      label: "Executive English",
+    },
+    {
+      id: 3,
+      label: "Test Preperation",
+    },
+    {
+      id: 4,
+      label: "Computer Literacy",
+    },
+    {
+      id: 5,
+      label: "Functional French",
+    }
+  
+]
+
+
+const general = [
+  {
+    id: 1,
+    label: "Regular",
+  },
+  {
+    id: 2,
+    label: "Intensive",
+  },
+
+]
+const tests = [
+  {
+    id: 1,
+    label: "TOEFL",
+  },
+  {
+    id: 2,
+    label: "IELTS",
+  },
+  { id: 3,
+    label: "TOEIC"
+  },
+
+]
+
 
   return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+    <div>
+      <div>
+        <p>CHOOSE A COURSE</p>
+        <select value={programId} onChange={changeOption} onClick={click}>
+          {programs.map((program) => (
+            <option key={program.id} value={program.id}>{program.label}</option>
+          ))}
+        </select>
+      </div>
+  
+    {options &&
+    <div>
+      <select className='w-40'>
+      {options.map((option) => (
+        <option value={option.id}>{option.label}</option>
+      ))}
+      </select>
+      </div>
+    }
+    <div>
+      <p>Duration</p>
     </div>
-  );
+         <div>
+      <select className='w-40 '>
+      {duration.map((option) => (
+        <option value={option.id}>{option} weeks</option>
+      ))}
+      </select>
+      </div>
+    </div>
+    
+  )
 }
 
-TabPanel.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.number.isRequired,
-  value: PropTypes.number.isRequired,
-};
-
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
-
-export default function BasicTabs() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  return (
-    <Box sx={{ width: '100%' }}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Courses" {...a11yProps(0)} />
-          <Tab label="Other Purchases" {...a11yProps(1)} />
-          <Tab label="Exam" {...a11yProps(2)} />
-        </Tabs>
-      </Box>
-      <TabPanel value={value} index={0}>
-        <StudCourses/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <AddStudPur/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <AddStudExam/>
-      </TabPanel>
-    </Box>
-  );
-}
+export default CoursesPurchasesExam
