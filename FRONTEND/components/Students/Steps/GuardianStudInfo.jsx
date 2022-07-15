@@ -28,6 +28,12 @@ const GuardianStudInfo = () => {
       setParent(false);
       setOrganisation(true);
     }
+
+    if (onField == "33") {
+      setMyself(false);
+      setParent(false);
+      setOrganisation(false);
+    }
   }
 
   return (
@@ -38,7 +44,7 @@ const GuardianStudInfo = () => {
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 dark:placeholder-gray-400
          dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
          value={onField} onChange={handleChange} onClick={onClick}>
-          <option>Choose a source</option>
+          <option value="33">Choose a source</option>
           <option value="1">Myself</option>
           <option value="2">Parent/Guardian</option>
           <option value="3">Organisation / Sponsor </option>

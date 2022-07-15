@@ -42,6 +42,7 @@ const Expenses = () => {
               <div className=''>
                 <label for="first_name" class="block mb-6 text-base font-medium text-gray-900 p-1">Expense Type</label>
                 <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Amount</label>
+                <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Description</label>
                 <label for="first_name" class="block mb-5 text-base font-medium text-gray-900 p-1">Date</label>
                
               
@@ -53,8 +54,8 @@ const Expenses = () => {
                   <option value="US">Bills</option>
                   <option value="CA">Salaries</option>
                 </select> 
-                <input type="number" id="first_name" class="bg-gray-50 border mb-4  text-right border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="name" />
-
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4  text-right border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="1000" />
+                <input type="text" id="first_name" class="bg-gray-50 border mb-4  text-right border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="" />
                 <input type="date" id="first_name" class="bg-gray-50 border mb-4 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-1.5 " placeholder="00" />
 
               </div>

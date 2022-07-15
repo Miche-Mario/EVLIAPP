@@ -60,13 +60,13 @@ const addStudents = () => {
               {displayStep(currentStep)}
             </StepperContext.Provider>
           </div>
-          {currentStep !== steps.length && 
+       
           <StepperControl
               handleClick={handleClick}
               currentStep={currentStep}
               steps={steps}
           />
-        }
+     
           </div>
          
         </div>

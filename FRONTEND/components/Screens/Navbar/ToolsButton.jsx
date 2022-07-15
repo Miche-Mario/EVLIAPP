@@ -61,11 +61,6 @@ const ToolsButton = () => {
               <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Languages</li>
             </a>        
         </Link> 
-        <Link href="/levels">
-            <a>
-              <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Levels</li>
-            </a>        
-        </Link> 
         <Link href="/studentsDiscounts">
             <a>
               <li className="rounded-sm px-3  py-1  pl-6 cursor-pointer">Students discounts</li>

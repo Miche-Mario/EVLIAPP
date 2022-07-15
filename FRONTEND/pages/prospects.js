@@ -114,20 +114,12 @@ const Prospects = () => {
               <option value="CA">French</option>
             </select>
 
-            <p className=' ml-6 ext-xl text-gray-900'>Level</p>
-            <select id="countries" class="ml-3 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-24 p-1">
-              <option value="US">All</option>
-              <option value="CA">A1</option>
-              <option value="CA">A2</option>
-            </select>
+        
 
             <p className=' ml-6 ext-xl text-gray-900'>Archived</p>
             <Checkbox />
             <button onClick={handleOpen} className='bg-blue-600 rounded ml-3 text-gray-100 font-medium w-48 h-10 p-3 flex items-center justify-center' type="submit" name='Add'>
               Add
-            </button>
-            <button className='bg-blue-600 rounded ml-3 text-gray-100 font-medium w-48 h-10 p-3 flex items-center justify-center' type="submit" name='Add'>
-              Assigned to course
             </button>
 
           </div>

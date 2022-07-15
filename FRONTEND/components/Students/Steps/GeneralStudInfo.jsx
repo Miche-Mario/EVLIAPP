@@ -26,7 +26,7 @@ const GeneralStudInfo = () => {
           </div>
           <div>
             <label for="company" class="block mb-2 text-sm font-medium text-gray-900   ">Forenames</label>
-            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="Gqel" required />
+            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="Gael" required />
           </div>
           <div>
             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900   ">Gender</label>
@@ -39,11 +39,11 @@ const GeneralStudInfo = () => {
           </div>
           <div>
             <label for="website" class="block mb-2 text-sm font-medium text-gray-900   ">Date of Birth</label>
-            <input type="url" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="01/01/2001" required />
+            <input type="date" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="01/01/2001" required />
           </div>
           <div>
             <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900   ">Place of Birth</label>
-            <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Cotonou" required />
+            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Cotonou" required />
           </div>
           <div>
             <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Citizenship</label>
@@ -55,27 +55,27 @@ const GeneralStudInfo = () => {
           </div>
           <div>
             <label for="company" class="block mb-2 text-sm font-medium text-gray-900   ">Email Adress</label>
-            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="johndoe@mail.com" required />
+            <input type="email" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="johndoe@mail.com" required />
           </div>
           <div>
             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900   ">Tel. (Home)</label>
-            <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+            <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
           </div>
           <div>
             <label for="website" class="block mb-2 text-sm font-medium text-gray-900   ">Tel. (Ghana)</label>
-            <input type="tel" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
+            <input type="text" id="phone" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-45-678" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required />
           </div>
           <div>
             <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900   ">Adresse (Home)</label>
-            <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123 Cotonou, Benin" required />
+            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123 Cotonou, Benin" required />
           </div>
           <div>
             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900   ">Adresse. (Ghana)</label>
-            <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123 Achimota, Accra, Ghana" required />
+            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123 Achimota, Accra, Ghana" required />
           </div>
           <div>
             <label for="website" class="block mb-2 text-sm font-medium text-gray-900   ">Marital Status</label>
-            <input type="url" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Single" required />
+            <input type="text" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Single" required />
           </div>
           <div>
             <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900   ">Passeport/ID No</label>
@@ -83,11 +83,11 @@ const GeneralStudInfo = () => {
           </div>
           <div>
             <label for="phone" class="block mb-2 text-sm font-medium text-gray-900   ">Academic Level</label>
-            <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Bachelor" required />
+            <input type="text" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Bachelor" required />
           </div>
           <div>
             <label for="website" class="block mb-2 text-sm font-medium text-gray-900   ">Note</label>
-            <input type="url" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
+            <input type="text" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="" required />
           </div>
           <div>
             <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900   ">How did you hear about EVLI</label>
