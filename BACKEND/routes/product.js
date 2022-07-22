@@ -8,7 +8,7 @@ var checkRole = require('../services/checkRole')
 
 router.post('/add', auth.authentificateToken, checkRole.checkRole, (req, res) => {
     let product = req.body;
-    var query = "insert into product (name, categorId, description, price, status) values (?,?,?,?, 'true')";
+    var query = "insert into product (name, categoryId, description, price, status) values (?,?,?,?, 'true')";
     connection.query(query, [product.name, product.categoryId, product.description, product.price], (err, results) => {
         if(!err) {
             return res.status(200).json({message: "Product Added Successfully."});
@@ -19,7 +19,7 @@ router.post('/add', auth.authentificateToken, checkRole.checkRole, (req, res) =>
 })
 
 router.get('/get', auth.authentificateToken, (req, res, next) => {
-    var query = "select p.id, p.name,p.description,p.price,p.satatus,c.id as categoryId, c.name as categoryName from product as p INNER JOIN category as c where p.categoryId = c.id ";
+    var query = "select p.id, p.name,p.description,p.price,p.status,c.id as categoryId, c.name as categoryName from product as p INNER JOIN category as c where p.categoryId = c.id ";
     connection.query(query, (err, results) => {
         if(!err) {
             return res.status(200).json(results);
@@ -41,9 +41,9 @@ router.get('/getByCategory/:id', auth.authentificateToken, (req, res, next) => {
     })
 })
 
-router.get('/getById/:id', auth.authentificateToken, (res, req,next)=> {
+router.get('/getById/:id', auth.authentificateToken, (req,res,next) => {
     const id = req.params.id;
-    var query = "select id, name, desciption, price from product where id= ?";
+    var query = "select id, name, description, price from product where id = ?";
     connection.query(query, [id], (err, results) => {
         if(!err) {
             return res.status(200).json(results[0]);
@@ -53,13 +53,14 @@ router.get('/getById/:id', auth.authentificateToken, (res, req,next)=> {
     })
 })
 
-router.patch('/update', auth.authentificateToken, checkRole, (req, res, next) => {
+
+router.patch('/update',auth.authentificateToken, checkRole.checkRole, (req, res, next) => {
     let product = req.body;
-    var query = "update product set name= ?, categoryId=?,description=?,price=?, where id=?";
+    var query = "update product set name = ?, categoryId = ?,description = ?,price = ? where id = ?";
     connection.query(query, [product.name,product.categoryId,product.description, product.price, product.id], (err, results) => {
         if(!err) {
             if(results.affectedRows == 0) {
-                return res.status(400).json({message: "Product id does not found"});
+                return res.status(404).json({message: "Product id does not found"});
             }
             return res.status(200).json({message: "Product Updated Successfully"});
         } else {
@@ -69,16 +70,35 @@ router.patch('/update', auth.authentificateToken, checkRole, (req, res, next) =>
 })
 
 
-router.delete('/delete', auth.authentificateToken, checkRole, (res, res, next) => {
+router.delete('/delete/:id', auth.authentificateToken, checkRole.checkRole, (req, res, next) => {
     const id = req.params.id;
-    var query = "delete from product where id=?";
-    connection.query(query, [id], (err, results) => {
+    var query = "delete from product where id = ?";
+    connection.query(query,[id], (err, results) => {
         if(!err) {
             if(results.affectedRows == 0) {
-                return res.status(400).json
+                return res.status(404).json({message: "Product id does not found"});
             }
-        }else {
-            return res.status(500).json(err)
+            return res.status(200).json({message: "Product Deleted Successfully"});
+        } else {
+            return res.status(500).json(err);
+        }
+    })
+})
+
+
+
+
+router.patch('/updateStatus', auth.authentificateToken, checkRole.checkRole, (req,res, next) => {
+    let user = req.body;
+    var query = 'update product set status=? where id=?';
+    connection.query(query, [user.status, user.id], (err,results) => {
+        if(!err) {
+            if(results.affectedRows == 0) {
+                return res.status(404).json({message: "Product id does not found"});
+            }
+            return res.status(200).json({message: "Product Status Updated Successfully"});
+        } else {
+            return res.status(500).json(err);
         }
     })
 })
