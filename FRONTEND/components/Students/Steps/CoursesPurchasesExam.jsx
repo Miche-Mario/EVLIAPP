@@ -1,8 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { AiOutlineAppstoreAdd } from 'react-icons/ai'
 import { BsFillTrashFill } from "react-icons/bs"
+import { StepperContext } from '../../../contexts/stepperContext'
+
 
 const CoursesPurchasesExam = () => {
+
+  const { studentData, setStudentData } = useContext(StepperContext)
+  const handleChangee = (e) => {
+    const { name, value } = e.target;
+    setStudentData({ ...studentData, [name]: value, courseList })
+  }
+
+  useEffect(() => {
+    const courseList = JSON.parse(localStorage.getItem('courseList'));
+    if (courseList) {
+     setCourseList(courseList);
+    }
+  }, []);
+
+
   const [options, setOptions] = useState()
   const [optionsAco, setOptionsAco] = useState()
 
@@ -13,7 +30,7 @@ const CoursesPurchasesExam = () => {
   const [oneOnOne, setOneOnOne] = useState(false)
 
 
-  const [courseList, setCourseList] = useState([{ course: '' }])
+  const [courseList, setCourseList] = useState([{course: '', duration: ''}])
 
   const duration = []
   const duration1 = []
@@ -34,6 +51,7 @@ const CoursesPurchasesExam = () => {
   const changeOptionAco = (e) => {
     setAcoId(e.target.value)
   }
+
 
 
   const oneOnChange = () => {
@@ -155,8 +173,7 @@ const CoursesPurchasesExam = () => {
 
 
   const addCourse = () => {
-    setCourseList([...courseList, { course: "" }])
-    console.log(courseList)
+    setCourseList([...courseList, {course: '', duration: ''}])  
   }
   const removeClick = (index) => {
     const list = [...courseList];
@@ -164,6 +181,13 @@ const CoursesPurchasesExam = () => {
     setCourseList(list)
   }
 
+  const handleCourseChange= (e,index) => {
+    const {name,value} = e.target;
+    const list = [...courseList];
+    list[index][name] = value;
+    setCourseList(list);
+  }
+ console.log(studentData)
   return (
     <div>
       {
@@ -178,7 +202,10 @@ const CoursesPurchasesExam = () => {
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 
         dark:placeholder-gray-400
          dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                onChange={changeOption} onClick={click}>
+                onChange={(e)=>{changeOption(e);handleChangee(e);handleCourseChange(e,index)}}
+                onClick={click}
+                name="course"
+                >
                 <option value="33" className='text-md'>Our programme</option>
                 {programs.map((program) => (
                   <option className='text-xl' value={program.id}>{program.label}</option>
@@ -218,7 +245,10 @@ const CoursesPurchasesExam = () => {
                 <p className='text-lg font-medium text-gray-600 '>DURATION</p>
                 <select class="bg-blue-100 border border-gray-300 text-gray-900 text-xl p-2 focus:ring-blue-500 
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 dark:placeholder-gray-400
-         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+         onChange={(e)=>{changeOption(e);handleChangee(e);handleCourseChange(e,index)}}
+          name="duration"
+         >
                   {duration.map((option) => (
                     <option value={option.id}>{option} weeks</option>
                   ))}
@@ -246,13 +276,21 @@ const CoursesPurchasesExam = () => {
 
       {view && <div className='m-5'>
         <p className='text-lg font-medium text-gray-600 '>Would you like to book additional one-on-one classes?</p>
-        <input type="checkbox" className="w-5 h-5 mt-3" onChange={oneOnChange} />
+        <input type="checkbox" className="w-5 h-5 mt-3" 
+        value={studentData["oneOnOnecp"] || ""}
+        name="oneOnOne1cp"
+        onChange={(e)=>{oneOnChange();handleChangee(e)}} />
+        
       </div>}
 
       {oneOnOne && <div className='m-5'>
         <select class="bg-blue-100 border border-gray-300 text-gray-900 text-xl p-2 focus:ring-blue-500 
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 dark:placeholder-gray-400
-         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+         value={studentData["oneOnOne1cp"] || ""}
+         name="oneOnOne1cp"
+        onChange={handleChangee} 
+         >
           {duration1.map((option) => (
             <option value={option.id}>{option} Private lesson</option>
           ))}
@@ -263,7 +301,11 @@ const CoursesPurchasesExam = () => {
         <p className='text-lg font-medium text-gray-600 '>Exam</p>
         <select class="bg-blue-100 border border-gray-300 text-gray-900 text-xl p-2 focus:ring-blue-500 
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 dark:placeholder-gray-400
-         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+         value={studentData["exam"] || ""}
+         name="examcp"
+        onChange={handleChangee} 
+         >
           {tests.map((option) => (
             <option value={option.id}>{option.label}</option>
           ))}
@@ -274,7 +316,12 @@ const CoursesPurchasesExam = () => {
         <p className='text-lg font-medium text-gray-600 '>Purchases</p>
         <select class="bg-blue-100 border border-gray-300 text-gray-900 text-xl p-2 focus:ring-blue-500 
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 dark:placeholder-gray-400
-         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+         
+         value={studentData["purchasecp"] || ""}
+         name="purchasecp"
+        onChange={handleChangee} 
+         >
           {purchases.map((option) => (
             <option value={option.id}>{option.label}</option>
           ))}
@@ -288,7 +335,11 @@ const CoursesPurchasesExam = () => {
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 
         dark:placeholder-gray-400
          dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          value={acoId} onChange={changeOptionAco} onClick={clickAco}>
+         value={studentData["aco"] || ""} 
+          onChange={(e)=>{changeOptionAco(e);handleChangee(e)}}
+          onClick={clickAco}
+          name="aco">
+          
           <option value="33" className='text-md'>Our accomadation</option>
           {accomodation.map((program) => (
             <option className='text-xl' key={program.id} value={program.id}>{program.label}</option>
@@ -303,7 +354,11 @@ const CoursesPurchasesExam = () => {
           focus:ring-blue-500 
         focus:border-blue-500 block  dark:bg-gray-700 w-[42rem] dark:border-gray-600 
         dark:placeholder-gray-400
-         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" >
+         dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+         value={studentData["aco1"] || ""} 
+         onChange={handleChangee}
+         name="aco1"
+         >
             <option value="33" className='text-md'>Our accomodations</option>
             {optionsAco.map((option) => (
               <option value={option.id}>{option.label}</option>
