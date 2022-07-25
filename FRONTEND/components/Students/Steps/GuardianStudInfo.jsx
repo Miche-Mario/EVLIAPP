@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { StepperContext } from '../../../pages/Context/StepperContext'
+import { StepperContext } from '../../../contexts/stepperContext'
 
 
 const GuardianStudInfo = () => {
@@ -7,6 +7,12 @@ const GuardianStudInfo = () => {
   const [parent, setParent] = useState(false)
   const [organisation, setOrganisation] = useState(false)
   const [onField, setOnField] = useState('')
+
+  const { studentData, setStudentData } = useContext(StepperContext)
+  const handleChangee = (e) => {
+    const { name, value } = e.target;
+    setStudentData({ ...studentData, [name]: value })
+  }
 
   const handleChange = (e) => {
     setOnField(e.target.value)
@@ -56,44 +62,81 @@ const GuardianStudInfo = () => {
           <form>
             <div class="grid gap-3 mb-6 lg:grid-cols-2">
               <div>
-                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Surname</label>
-                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required />
+                <label for="surnamep" class="block mb-2 text-sm font-medium text-gray-900 ">Surname</label>
+                <input type="text" id="surnamep" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required 
+                  onChange={handleChangee}
+                  name="surnamep"
+                  value={studentData["surnamep"] || ""}
+                />
               </div>
               <div>
-                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900   ">Forenames</label>
-                <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Doe" required />
+                <label for="forenamesp" class="block mb-2 text-sm font-medium text-gray-900   ">Forenames</label>
+                <input type="text" id="forenamesp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Doe" required 
+                  onChange={handleChangee}
+                  name="forenamesp"
+                  value={studentData["forenamesp"] || ""}
+                />
               </div>
               <div>
-                <label for="company" class="block mb-2 text-sm font-medium text-gray-900   ">Gender</label>
-                <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                  <option selected></option>
-                  <option value="US">Male</option>
-                  <option value="CA">Female</option>
+                <label for="genderp" class="block mb-2 text-sm font-medium text-gray-900">Gender</label>
+                <select id="genderp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  onChange={handleChangee}
+                  name="genderp"
+                  value={studentData["genderp"] || ""}
+                >
+                  <option></option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
                   <option value="other">Other</option>
-                </select>          </div>
-              <div>
-                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Relationship</label>
-                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="relationship" required />
+                </select>          
               </div>
               <div>
-                <label for="website" class="block mb-2 text-sm font-medium text-gray-900">Occupation</label>
-                <input type="url" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Occupation" required />
+                <label for="relationshipp" class="block mb-2 text-sm font-medium text-gray-900">Relationship</label>
+                <input type="text" id="relationshipp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="relationship" required 
+                  onChange={handleChangee}
+                  name="relationshipp"
+                  value={studentData["relationshipp"] || ""}
+                />
               </div>
               <div>
-                <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900   ">Email addess</label>
-                <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="johndoe@mail.com" required />
+                <label for="occupationp" class="block mb-2 text-sm font-medium text-gray-900">Occupation</label>
+                <input type="text" id="occupationp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Occupation" required 
+                  onChange={handleChangee}
+                  name="occupationp"
+                  value={studentData["occupationp"] || ""}
+                />
               </div>
               <div>
-                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Tel 1</label>
-                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Cotonou" required />
+                <label for="emailp" class="block mb-2 text-sm font-medium text-gray-900   ">Email addess</label>
+                <input type="email" id="emailp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="johndoe@mail.com" required 
+                  onChange={handleChangee}
+                  name="emailp"
+                  value={studentData["emailp"] || ""}
+                />
               </div>
               <div>
-                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900   ">Tel 2</label>
-                <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-456" required />
+                <label for="tel1p" class="block mb-2 text-sm font-medium text-gray-900 ">Tel 1</label>
+                <input type="text" id="tel1p" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Cotonou" required 
+                  onChange={handleChangee}
+                  name="tel1p"
+                  value={studentData["tel1p"] || ""}
+                />
               </div>
               <div>
-                <label for="company" class="block mb-2 text-sm font-medium text-gray-900   ">Adress</label>
-                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="johndoe@mail.com" required />
+                <label for="tel2p" class="block mb-2 text-sm font-medium text-gray-900   ">Tel 2</label>
+                <input type="text" id="tel2p" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-456" required 
+                  onChange={handleChangee}
+                  name="tel2p"
+                  value={studentData["tel2p"] || ""}
+                />
+              </div>
+              <div>
+                <label for="addressp" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
+                <input type="text" id="addressp" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="johndoe@mail.com" required 
+                  onChange={handleChangee}
+                  name="addressp"
+                  value={studentData["addressp"] || ""}
+                />
               </div>
 
 
@@ -106,28 +149,52 @@ const GuardianStudInfo = () => {
           <form>
             <div class="grid gap-3 mb-6 lg:grid-cols-2">
               <div>
-                <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
-                <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required />
+                <label for="nameo" class="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
+                <input type="text" id="nameo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="John" required 
+                onChange={handleChangee}
+                  name="nameo"
+                  value={studentData["nameo"] || ""}
+                />
               </div>
               <div>
-                <label for="last_name" class="block mb-2 text-sm font-medium text-gray-900   ">Adress</label>
-                <input type="text" id="last_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Adress" required />
+                <label for="adresso" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
+                <input type="text" id="adresso" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Adress" required 
+                onChange={handleChangee}
+                  name="adresso"
+                  value={studentData["adresso"] || ""}
+                />
               </div>
               <div>
-                <label for="company" class="block mb-2 text-sm font-medium text-gray-900   ">Tel</label>
-                <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="123-456" required />
+                <label for="telo" class="block mb-2 text-sm font-medium text-gray-900">Tel</label>
+                <input type="text" id="telo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  " placeholder="123-456" required 
+                onChange={handleChangee}
+                  name="telo"
+                  value={studentData["telo"] || ""}
+                />
               </div>
               <div>
-                <label for="phone" class="block mb-2 text-sm font-medium text-gray-900   ">Email Adress</label>
-                <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="johndoe@mail.com" required />
+                <label for="emailo" class="block mb-2 text-sm font-medium text-gray-900   ">Email Address</label>
+                <input type="email" id="emailo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="johndoe@mail.com" required 
+                onChange={handleChangee}
+                  name="emailo"
+                  value={studentData["emailo"] || ""}
+                />
               </div>
               <div>
-                <label for="website" class="block mb-2 text-sm font-medium text-gray-900   ">Contact Person</label>
-                <input type="url" id="website" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Contact person" required />
+                <label for="contacto" class="block mb-2 text-sm font-medium text-gray-900   ">Contact Person</label>
+                <input type="text" id="contacto" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Contact person" required 
+                onChange={handleChangee}
+                  name="contacto"
+                  value={studentData["contacto"] || ""}
+                />
               </div>
               <div>
                 <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900   ">Tel</label>
-                <input type="number" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-456" required />
+                <input type="phone" id="visitors" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="123-456" required 
+                onChange={handleChangee}
+                  name="addressp"
+                  value={studentData["addressp"] || ""}
+                />
               </div>
             </div>
           </form>

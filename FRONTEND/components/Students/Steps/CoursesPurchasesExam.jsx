@@ -156,6 +156,7 @@ const CoursesPurchasesExam = () => {
 
   const addCourse = () => {
     setCourseList([...courseList, { course: "" }])
+    console.log(courseList)
   }
   const removeClick = (index) => {
     const list = [...courseList];

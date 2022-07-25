@@ -5,11 +5,11 @@ import StepperControl from '../components/Students/Steps/StepperControl'
 import GeneralStudInfo from "../components/Students/Steps/GeneralStudInfo"
 import GuardianStudInfo from "../components/Students/Steps/GuardianStudInfo"
 import Complete from "../components/Students/Steps/Complete"
-import { StepperContext } from './Context/StepperContext'
+import { StepperContext } from '../contexts/stepperContext'
 import CoursePurchasesExam from '../components/Students/Steps/CoursesPurchasesExam'
 const addStudents = () => {
   const [currentStep, setCurrentStep] = useState(1);
-  const [userData, setUserData] = useState('');
+  const [studentData, setStudentData] = useState('');
   const [finalData, setFinalData] = useState([]);
 
   const steps = [
@@ -51,8 +51,8 @@ const addStudents = () => {
           />
           <div className='my-10 p-2 pb-0'>
             <StepperContext.Provider value={{
-              userData,
-              setUserData,
+              studentData,
+              setStudentData,
               finalData,
               setFinalData
 
