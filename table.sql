@@ -44,10 +44,9 @@ CREATE TABLE exams(
 --------------------------------------------------------------------------------PURCHASES
 
 CREATE TABLE purchases(
-    purchaseid int primary key AUTO_INCREMENT,
+    purchaseid INT primary key AUTO_INCREMENT,
     purchasename varchar(250),
-    purchaseprice integer,
-    purchasedescription
+    purchaseprice INT,
 );
 
 ------------------------------------------------------------------------------------------------STUDENTS
@@ -88,8 +87,8 @@ CREATE TABLE students
   tel2e VARCHAR(250),
   addresse VARCHAR(250),
   surnamep VARCHAR(250),
-  forenames VARCHAR(250),
-  genders VARCHAR(250),
+  forenamesp VARCHAR(250),
+  genderp VARCHAR(250),
   relationshipp VARCHAR(250),
   occupationp VARCHAR(250),
   emailp VARCHAR(250),

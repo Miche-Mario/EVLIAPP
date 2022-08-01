@@ -3,7 +3,7 @@ import Layout from '../components/Screens/Layout'
 
 const Home = () => {
   return (
-    <div>Homeouevheouivheodvhoidhoizdshsiodhczoidhzoidhzoidhzoidhzoidhozdzoidhzdiozdhvzdoizvhiozdoih</div>
+    <div>Welcome page</div>
   )
 }
 
